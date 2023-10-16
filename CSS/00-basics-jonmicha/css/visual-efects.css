@@ -1,0 +1,560 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.box {
+  border: thick solid black;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 5rem;
+}
+
+/* 
+**** Box Shadow - Sombra a las cajas****
+ 
+box-shadow: mov-x mov-y blur-radius spread-blur color inset/outset; 
+
+- Si no se especifica el color de la sombra, esta va a heredar el color de este elemento.
+
+- Se pueden especificar valores negativos
+
+- Valor por defecto del lugar de la sombra es outset 
+
+*/
+.shadow {
+  /* color: thistle; */
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 1rem 1rem 1rem 1rem;
+  box-shadow: -1rem -1rem 1rem 1rem;
+  box-shadow: 1rem 1rem 1rem 1rem #0005;
+  box-shadow: 1rem 1rem 1rem 1rem #000 inset;
+  box-shadow: 1rem 1rem 1rem 1rem #000 outset;
+  box-shadow: 1rem 0.5rem 2rem 0.5rem;
+
+  /*
+   **** Text Shadow **** 
+   box-shadow: mov-x mov-y blur-radius color; 
+  */
+  text-shadow: -1rem -1rem 0.3rem hotpink;
+}
+
+/*
+ Multiple Shadows 
+We only need to separate our shadows with a comma
+*/
+.shadows {
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 1rem 1rem 1rem 1rem #000 inset, 1rem 1rem 1rem 1rem #000 inset,
+    -1rem -1rem 0.5rem 1.5rem pink;
+  text-shadow: -1rem -1rem 0.5rem yellow, -1rem -1rem 0.5rem cyan;
+}
+
+/* 
+****** Filter* ******
+  - drop-shadow(), la clave de este es tener una imagen sin fondo
+*/
+
+.drop-shadow {
+  width: 300px;
+  height: 300px;
+}
+
+.drop-shadow img {
+  max-width: 100%;
+  height: auto;
+  /* filter: drop-shadow(mov-x mov-y blur-radius color); */
+  filter: drop-shadow(1rem 1rem 1rem red);
+  filter: drop-shadow(1rem 1rem 1rem steelblue);
+}
+
+/*
+*** Filter Gradient ***
+*/
+
+.linear-gradient {
+  background-image: linear-gradient(0deg, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(30deg, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(45deg, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(180deg, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(45deg, thistle, lightblue, lightgreen);
+  /* La inclinacion tambien se puede hacer con palabras clave. */
+  background-image: linear-gradient(to right, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(to top, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(to bottom, thistle, lightblue, lightgreen);
+  background-image: linear-gradient(
+    to top right,
+    thistle,
+    lightblue,
+    lightgreen
+  );
+  background-image: linear-gradient(
+    to right bottom,
+    thistle,
+    lightblue,
+    lightgreen
+  );
+
+  background-image: linear-gradient(90deg, thistle, lightblue, lightgreen);
+  /* Proporciones */
+  background-image: linear-gradient(
+    90deg,
+    thistle 30%,
+    /* Fin */ lightblue 50% 60%,
+    /* Inicio y fin */ lightgreen
+  );
+}
+
+.radial-gradient {
+  /* Exactamente igual que Linear */
+  background-image: radial-gradient(cyan, rebeccapurple);
+  /* Al igual se puede especificar el gradiente radial (tipo, tamanio) */
+  background-image: radial-gradient(circle 5rem, cyan, rebeccapurple);
+  background-image: radial-gradient(
+    circle 6rem,
+    cyan 30%,
+    thistle 60%,
+    rebeccapurple
+  );
+  /* Podemos dar la ubicacion inicial del radial. */
+  background-image: radial-gradient(
+    circle 6rem at top,
+    cyan 30%,
+    thistle 60%,
+    rebeccapurple
+  );
+  background-image: radial-gradient(
+    circle 6rem at bottom right,
+    cyan 30%,
+    thistle 60%,
+    rebeccapurple
+  );
+  background-image: radial-gradient(
+    circle 6rem at center,
+    /* default* */ cyan 30%,
+    thistle 60%,
+    rebeccapurple
+  );
+  /* Elipse (x, y) */
+  background-image: radial-gradient(
+    ellipse 50px 80px,
+    cyan 30%,
+    thistle 60%,
+    rebeccapurple
+  );
+  /* japan flag */
+  background-image: radial-gradient(circle 100px, red 50%, white 50%);
+}
+
+/* Exactamente igual que linear y radial gradient */
+.conic-gradient {
+  background-image: conic-gradient(thistle, rebeccapurple, blue);
+  background-image: conic-gradient(thistle 0% 50%, rebeccapurple 55% 70%, blue);
+  /* Tambien se puede hacer con grados. */
+  background-image: conic-gradient(
+    /* Especificacion del inicio de los grados de la conica*/ from 90deg thistle
+      0deg 50deg,
+    rebeccapurple 100deg 240deg,
+    blue 240deg 360deg
+  );
+  background-image: conic-gradient(
+    from 180deg thistle 0deg 50deg,
+    rebeccapurple 100deg 240deg,
+    blue 240deg 360deg
+  );
+  background-image: conic-gradient(
+    from 90deg,
+    red 0deg 120deg,
+    white 120deg 240deg,
+    blue 240deg
+  );
+}
+
+/*  Funciones auxiliares de degradados */
+
+.repeat-gradient-linear {
+  /* Repetira la gradiente cuantas veces se pueda */
+  background-image: repeating-linear-gradient(
+    red 0 10px,
+    green 10px 20px,
+    blue 20px 30px
+  );
+  background-image: repeating-linear-gradient(
+    90deg,
+    red 0 10px,
+    green 10px 20px,
+    blue 20px 30px
+  );
+  background-image: repeating-linear-gradient(
+    45deg,
+    red 0 10px,
+    green 10px 20px,
+    blue 20px 30px
+  );
+}
+
+.repeat-gradient-radial {
+  background-image: repeating-radial-gradient(
+    circle 4rem,
+    cyan 0 10px,
+    magenta 10px 20px,
+    yellow 20px 30px
+  );
+}
+
+.repeat-gradient-conic {
+  background-image: repeating-conic-gradient(
+    red 0 8%,
+    yellow 8% 16%,
+    black 16% 24%
+  );
+}
+
+.chart-gradient {
+  background-image: conic-gradient(cyan 0% 50%, magenta 50% 80%, yellow 80%);
+  border-radius: 50%;
+}
+
+.donut-gradient {
+  background-image: radial-gradient(white 20%, black 21%, transparent 23%),
+    conic-gradient(cyan 0% 30%, magenta 30% 60%, yellow 60% 78%, thistle 78%);
+  border-radius: 50%;
+}
+
+/* 
+**** Filtros ****
+*/
+.card {
+  border: thick solid black;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 600px;
+  margin-bottom: 5rem;
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+
+  /* Blur x */
+  filter: blur(1rem);
+  filter: blur(0.25rem);
+  filter: blur(0.15rem);
+
+  /* Brightness 0-1 */
+  filter: brightness(1);
+  filter: brightness(0.7);
+  filter: brightness(0.5);
+  filter: brightness(0.2);
+  filter: brightness(1.5);
+
+  /* Contrast 0-1 */
+  filter: contrast(0);
+  filter: contrast(0.5);
+  filter: contrast(1.5);
+
+  /* Grayscale 0-1 */
+  filter: grayscale(0.58);
+  filter: grayscale(0.75);
+  filter: grayscale(0.9);
+  filter: grayscale(1);
+  filter: grayscale(1.6); /* nothing */
+
+  /* Sepia 0-1 */
+  filter: sepia(0.5);
+  filter: sepia(0.9);
+  filter: sepia(9);
+
+  /* Hue-rotate - With grades*/
+  filter: hue-rotate(50deg);
+  filter: hue-rotate(100deg);
+  filter: hue-rotate(200deg);
+  filter: hue-rotate(200deg);
+  filter: hue-rotate(125deg);
+  filter: hue-rotate(150deg);
+  filter: hue-rotate(240deg);
+  filter: hue-rotate(300deg);
+
+  /* Invert (Invierte en acciones) 0||1 */
+  filter: invert(1);
+
+  /* Opacity (yes) */
+  filter: opacity(0.5);
+
+  /* Saturate  0-1 */
+  filter: saturate(0.5);
+  filter: saturate(0.75);
+  filter: saturate(1);
+  filter: saturate(2);
+  filter: saturate(30);
+}
+
+/* 
+****** Filters Multiples ******
+*/
+
+.yes {
+  filter: blur(0.1rem) hue-rotate(270deg) opacity(0.7);
+}
+
+/* 
+**** Filtros a Fondos****
+*/
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.backdrop-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.backdrop-filter h4 {
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 3rem;
+  background-color: rgb(218, 175, 218, 0.5);
+  /* Ahora si xd */
+  backdrop-filter: sepia(1);
+  backdrop-filter: hue-rotate(280deg);
+  backdrop-filter: blur(0.2);
+}
+
+/* Multiples */
+
+.backdrop-filter-multiple h4 {
+  border-radius: 1rem;
+  font-size: 3rem;
+  padding: 3rem;
+  background-color: rgb(218, 175, 218, 0.5);
+  backdrop-filter: blur(1rem) hue-rotate(240deg) opacity(0.1);
+}
+
+/* 
+**** Modo Dark/Light con fltros ****
+*/
+
+.dark-mode {
+  background-color: #fff;
+  color: #000;
+  filter: invert(1);
+}
+
+.dark-mode img {
+  filter: invert(1);
+}
+
+/*  
+***************** Mix-blend-mode ***************** 
+
+- Esta funcion no se tiene que aplicar a el padre, si no a los hijos (En este caso a las img)
+*/
+
+.blend-modes img {
+  /* 
+  mix-blend-mode: normal;
+  mix-blend-mode: color;
+  mix-blend-mode: color-dodge;
+  mix-blend-mode: color-burn;
+  mix-blend-mode: screen;
+  mix-blend-mode: saturation;
+  mix-blend-mode: multiply;
+  mix-blend-mode: luminosity;
+  mix-blend-mode: hue;
+  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
+  mix-blend-mode: hard-light;
+  mix-blend-mode: soft-light;
+  mix-blend-mode: lighten;
+  mix-blend-mode: darken; */
+  mix-blend-mode: overlay;
+}
+
+/*
+*** Modos de mezcla a fondos ***
+*/
+
+.bg-blend-mode {
+  background-image: url("/assets/hola.jpg"), url("/assets/g.jpg");
+  background-size: cover;
+  /* 
+  background-blend-mode: normal;
+  background-blend-mode: color;
+  background-blend-mode: color-dodge;
+  background-blend-mode: color-burn;
+  background-blend-mode: screen;
+  background-blend-mode: saturation;
+  background-blend-mode: multiply;
+  background-blend-mode: luminosity;
+  background-blend-mode: hue;
+  background-blend-mode: exclusion;
+  background-blend-mode: difference;
+  background-blend-mode: hard-light;
+  background-blend-mode: soft-light;
+  background-blend-mode: lighten; */
+  /* background-blend-mode: overlay; */
+  background-blend-mode: saturation;
+}
+
+/* 
+ ***** Mascaras *****
+ - Podemos hacer una mascara en forma de:
+      forma de circulo
+      forma de elipse
+      forma de elipse
+      de manera rectangular (modelo de caja)
+      poligonos (3++ lados)
+
+ - El enmascaramiento siempre comezara desde el centro
+ - clip-path va hacer uso de cuatro funciones (podemos hacer una )
+
+
+ */
+.clip-path {
+  background-size: cover;
+  background-position: center;
+
+  /* La funcion circle() aceptara el radio del circulo (redundante) y tambien un posible "at (como los gradientes) o coordenadas
+  */ /* 
+  clip-path: circle(10rem);
+  clip-path: circle(10rem at left);
+  clip-path: circle(10rem at bottom);
+  clip-path: circle(10rem at left top);
+  clip-path: circle(10rem at 0 0);
+  clip-path: circle(10rem at 10%); */
+
+  /* La funcion ellipse() va a tener parametros similares como su hermano de arriba (cirle)
+  pero ahora tendras que especificar ambos ejes */
+  /*  clip-path: ellipse();
+  clip-path: ellipse(10rem);
+  clip-path: ellipse(5rem 7rem at left);
+  clip-path: ellipse(5rem 7rem at top);
+  clip-path: ellipse(5rem 10rem at 180px 300px);
+ */
+  /* La funcion inset() necesita valores obligatoriamente, este hará un cuadrado (como el modelo de caja (cuatro valores no obligatorios))
+  - Tambien existe un redondeo dentro de la funcion llamado "round", los valores que esten delante de el seran los lados (modelo de caja) seran los que tendran estos valores redondeados (cabe aclarar que esto funciona similar al modelo de caja de CSS)
+  */
+  /* clip-path: inset(4rem);
+  clip-path: inset(4rem);
+  clip-path: inset(3rem 2rem);
+  clip-path: inset(3rem 2rem 1rem 0.5rem); */
+  clip-path: inset(1rem round 1rem); /* todos */
+  /* clip-path: inset(2rem round 5rem 4rem 3rem 1rem); */
+  clip-path: inset(1rem round 5rem 2rem); /* this is nicer xd */
+
+  /* La funcion polygon() necesita parametros (igual que la funcion de arriba) */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  ); /* Un triangulo, estableciendo coordenadas (tercera pico xd) */
+
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* ********** Formas ************** */
+.shapes {
+  border: thick solid black;
+  padding: 1rem;
+  margin: 0 auto 5rem;
+  max-width: 800px;
+  font-size: 1.25rem;
+}
+
+.shapes img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/*
+ Estableciendo la forma con nuestro circle
+  *Esto adaptara nuestro texto a la forma de nuestra imagen por lo  tanto no se vera igual de jodida de lo que estaba XD
+ */
+.shape-1 {
+  margin: 4rem 2rem;
+  /* shape-outside: circle();
+  shape-outside: ellipse();
+  shape-outside: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  ); */
+  shape-outside: circle();
+}
+
+.shape-2 {
+  margin: 4rem 0 4rem 2rem;
+  shape-outside: ellipse();
+}
+
+.shape-3 {
+  margin: 2rem 4rem 1rem 0;
+  shape-outside: polygon(
+    50% 2%,
+    100% 36%,
+    93% 85%,
+    38% 78%,
+    12% 80%,
+    0 72%,
+    13% 39%
+  );
+}

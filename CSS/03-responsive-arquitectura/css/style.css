@@ -1,0 +1,262 @@
+[class^="box"] {
+  margin: 2rem auto;
+  background-color: orangered;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+}
+
+.box-flexible {
+  width: 50%;
+  height: 20vh;
+}
+
+.box-flexible-2 {
+  max-width: 960px;
+  min-width: 200px;
+  max-height: 500px;
+  min-height: 280px;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* responsive video (old style ) */
+.responsive-media {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  /* 
+    Formato widescreen 16:9
+    16 --> 100%
+    9  --> 56.25%
+  */
+  padding-bottom: 56.25%;
+}
+
+.responsive-media > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ aspect ratio 16:9 (cool-style) 
+ */
+.aspect-ratio-16-9 {
+  background-color: rebeccapurple;
+  aspect-ratio: 16/9;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
+}
+
+/* media queries */
+/* impresion v3 */
+@media print {
+  @page {
+    size: A5 landscape;
+  }
+
+  body {
+    font-size: 12pt;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #333;
+    color: #ccc;
+    margin: 1rem 10rem 0 0;
+  }
+}
+
+/* no preferencia de animaciones en el navegador */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto; /* no  */
+    scroll-behavior: smooth; /* chi */
+  }
+}
+
+/* preferencia modo (dark y light) */
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    background-color: #333;
+    color: thistle;
+    font-weight: 600;
+  }
+}
+
+@media screen and (prefers-color-scheme: no-prederence) {
+  html {
+    background-color: #333;
+    color: thistle;
+    font-weight: 600;
+  }
+}
+
+/*  un tipica media querie */
+/* Mobile First, min-width lo minimo del valor que le des hacia arriba */
+@media screen and (min-width: 480px) {
+  html {
+    background-color: lightpink;
+    color: #333;
+  }
+}
+
+/* Desktop First, max-width lo maximo del valor que le des hacia abajo */
+@media screen and (max-width: 1024px) {
+  html {
+    background-color: lightgreen;
+    color: #333;
+  }
+}
+
+/* feauture queries 
+  (preguntas de x cosa al navegador (como caracteristicas))
+*/
+/* if */
+@supports (grid-template-columns: subgrid) {
+  html {
+    background-color: thistle;
+    color: #333;
+  }
+}
+
+/* if + not */
+@supports not (grid-template-columns: subgrid) {
+  html {
+    background-color: #333;
+    color: thistle;
+  }
+}
+
+/* if + and */
+@supports (display: grid) and (grid-template-columns: subgrid) {
+  html {
+    background-color: aqua;
+    color: black;
+  }
+}
+
+@supports (grid-template-columns: subgrid) or (display: grid) {
+  html {
+    background-color: aqua;
+    color: black;
+  }
+}
+
+@supports (display: grid) or (grid-template-columns: subgrid) {
+  html {
+    background-color: #222;
+    color: thistle;
+  }
+}
+
+/* container queries */
+
+.card {
+  border: thin solid #111;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  contain: layout inline-size style;
+}
+
+.card-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: o 50%;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* chrome//flags (not supported) */
+@container (min-width: 600px) {
+  .card-content {
+    display: flex;
+  }
+
+  .card-conteiner > * {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+/* fluid grid */
+.fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fluid-item {
+  border: thin solid #fff;
+  padding: 1rem;
+}
+
+/* fluid text */
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
+  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  --step-2: clamp(1.62rem, calc(1.5rem + 0.58vw), 1.95rem);
+  --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+  --step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
+}
+
+.step--2 {
+  font-size: var(--step--2);
+}
+.step--1 {
+  font-size: var(--step--1);
+}
+.step-0 {
+  font-size: var(--step-0);
+}
+.step-1 {
+  font-size: var(--step-1);
+}
+.step-2 {
+  font-size: var(--step-2);
+}
+.step-3 {
+  font-size: var(--step-3);
+}
+.step-4 {
+  font-size: var(--step-4);
+}
+.step-5 {
+  font-size: var(--step-5);
+}
+
+/* hack fluid text */
+body {
+  /* 
+  14 = tamaño de letra mas pequeño
+  18 = tamaño de letra mas grande
+  300 = tamaño de viewport mas peque;o
+  1400 = tamaño de viewport mas grande
+  */
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1400 - 300)));
+  font-size: calc(14px + (16 - 10) * ((100vw - 300px) / (1920 - 200)));
+  padding: calc(14px + (16 - 10) * ((100vw - 300px) / (1920 - 200)));
+}
+
+/* fluid containers */
+
+.box-fluid {
+  /* clamp(min, perfect, max) */
+  width: clamp(400px, 60vw, 600px);
+  height: clamp(200px, 30vh, 300px);
+}

@@ -1,0 +1,197 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  background-color: #333;
+  margin: 2rem;
+  height: 400px;
+  /* width: 1000px; */
+  /* padding: 1rem; */
+  /*
+   El comportamiento por default de los hijos de una caja Flexbox, se van a alinear (y la direccion por defecto de una caja Flexbox es por Fila (Row))  
+  
+  Si existe otra caja Flexbox igual a ella, se van a juntar (Block)
+
+  Recuerda que por defecto trabajan con un Display Block (en bloque), por como las conoce y deci Jon, ENVIDIOSAS, debido que utilizan todo el espacio sin siquiera ocuparlo.
+  Bueno, pues Display Flex las convertira en una caja Flexible pero de igual manera trabajaran en bloque (block), por eso el comportamiento de arriba. Y aqui entra nuestra otra propiedad inline-flex (flexible en linea), se van a comportar como un elemento en linea :D
+  */
+
+  /* ********************** DISPLAY FLEX ********************** */
+  /* display: flex; (flex en Bloque) (DEFAULT) */
+  display: inline-flex; /* (Flex en Linea) */
+  display: flex;
+
+  /*
+ ********************** Flex-direction -  Direcciones felxibles **********************
+  Define el eje principal (main axis), row para x y column para y
+   */
+  flex-direction: row; /* Valor por defecto */
+  flex-direction: row-reverse; /* Fila de reversa xd */
+  flex-direction: column-reverse; /* Columna de reversa */
+  flex-direction: column; /* Columna */
+  flex-direction: row-reverse;
+
+  /*  
+ ****************** Flex-wrap - Envoltura **********************
+  Va a preguntar si quiere los items envueltos o no en una fila o columna (dependiendo la flex-direction); en una sola linea o columna.
+  El valor por defecto siendo nowrap
+  */
+  flex-wrap: nowrap; /* Valor por defecto, va a tratar de envolver a todos sus hijos en una sola linea */
+  flex-wrap: wrap; /* Va a envolver a sus hijos, considerando las dimensiones (height y width; y si es que no caben sus hijos va a crear nuevas filas o columnas, dependiendo la direccion */
+  flex-wrap: wrap-reverse; /* Lo mismo, pero al reves xd */
+
+  /***************** Y aqui un shorthand de flex-direction y flex-wrap *********************/
+  flex-flow: column wrap;
+
+  /*
+  ********************** MAIN AXIS **********************
+ ****  Justify Content  ****
+  Justify content define la alineacion del eje principal, no solamente en el eje x ya que esto lo definira nuestro flex-direction
+ Tenemos estos valores en justify-content
+ flex-start *default|| center || flex-end || space-between || space-around || space-evenly
+  */
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around; /* Considera las orillas pero no proporcionalmente */
+  justify-content: space-between; /* NO considera las orillas */
+  justify-content: space-evenly; /* Considera las orillas proporcionalmente */
+  justify-content: flex-end;
+  justify-content: flex-start;
+
+  /* Ahora en column */
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  justify-content: flex-end;
+
+  flex-direction: row-reverse; /* Y ahora al reves xd */
+  justify-content: space-evenly;
+
+  /* reset */
+  /* flex-direction: column; */
+  justify-content: flex-start;
+  /* flex-wrap: nowrap; */
+
+  /* 
+ ******************************************** CROSS AXIS ********************************************
+  (alineara el eje Y)
+  define la alineacion de los hijos en el eje transversal (cross axis), dentro de cada linea
+
+  align items tiene:
+  stretch *default|| flex-start || flex-end || center || baseline 
+  */
+  align-items: stretch;
+  align-items: center;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: baseline;
+
+  align-items: center;
+  align-items: flex-end;
+  align-items: baseline;
+
+  /* 
+  ********************** ALIGN CONTENT (casi igual a justify-content) **********************
+  Define la alineacion de los hijos en el eje transversal (cross-axis), NO funciona cuando los hijos estan en UNA sola linea (exepto si usas wrap || wrap-reverse (debido a que estos activan esta propiedad))
+  flex-start *default|| center || flex-end || space-between || space-around || space-evenly
+  */
+
+  flex-flow: column wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: stretch;
+
+  /* Reset */
+
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: flex-start;
+  text-align: center;
+}
+
+.item {
+  border: medium solid black;
+  /* width: 100px; */
+  /* height: 20%; */
+  background-color: #666;
+  /*
+
+   **** Flex Grow ****
+  Cuando la caja flexbox tenga espacio sobrante es la habilidad o el factor de crecer, valor por DEFECTO es 0, NO se aceptan valores negativos
+  */
+  /* flex-grow: 1; */
+
+  /* 
+ **** Flex Shrink ****
+ Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos
+*/
+  flex-shrink: 1;
+  /* 
+**** Flex Basis ****
+Es el tamanio del elemento hijo dentro de la linea de la caja flexbox.
+Si la caja flexbox tiene direccion de fila, flex-basis representa el width
+Si la caja flexbox tiene direccion de columna, flex-basis representa el height
+Valor por defecto auto* 
+*/
+  flex-basis: auto;
+  /* Para flexbox su propiedad flex-basis tiene mas especificidad que la propiedad width  */
+  flex-basis: 100px;
+  /* height: 200px; */
+  /* width: 200px; */
+
+  /*
+   ** Shorthand ** 
+   es un shorthand de las propiedadees flex-grow flex-shrink y flex-basis, es ese orden
+   */
+  flex: 0 1 auto;
+
+  /* 
+  ***** Order *****
+  Representa el orden que tendran los elementos hijos en la caja flexbox
+    Valor por defecto 0
+    Se aceptan valores negativos y positivos
+    Un valor menor siempre irá antes que un valor mayor
+   */
+  order: 0;
+
+  /* 
+  ***** Align self *****
+  A lo mejor tendremos un elemento que querramos alinear pero no a los demas, pues esto hará
+  Sobrescribe el valor de la propiedad align-items para el elemento hijo seleccionado
+ strech* | flex-start | flex-end | center | baseline
+  */
+  align-self: stretch;
+}
+.item:nth-child(2) {
+  /* Este aprovechara el espacio dos veces mas */
+  /*   flex-grow: 3; */
+  /* flex-shrink: 2; */
+  /* order: 1; Aqui aplica la tercera regla de order */
+}
+
+.item:nth-child(3) {
+  /*  flex-grow: 2; */
+  /* flex-shrink: 3; */
+  /* order: 2; */
+  align-self: stretch;
+  /* align-self: flex-start; */
+  /* align-self: flex-end; */
+  /* align-self: center; */
+  /* align-self: baseline; */
+}
+
+/* .item:nth-child(2),
+.item:nth-child(17) {
+  font-size: 250%;
+} */

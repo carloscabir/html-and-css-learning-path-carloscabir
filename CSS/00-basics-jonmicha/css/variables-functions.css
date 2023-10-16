@@ -1,0 +1,127 @@
+/* 
+Empeazare a dar un poco más de disenio
+alo
+*/
+
+:root {
+  color: darkgreen;
+  color: black;
+  --default-bg-color: thistle;
+}
+
+html {
+  color: blueviolet;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/*
+ Igual que las variables en lenguajes de programacion, estas tienen un ambito, contexto o scope. 
+*/
+
+.custom-props-1 {
+  --primary-color: gray;
+  --font-size: 32px;
+  background-color: var(--primary-color);
+}
+
+.custom-props-3 {
+  font-size: var(--font-size);
+  border: var(--border-black-medium); /* Desde el html */
+}
+
+/* 
+Van a tener dos parametros, el primero como primera opcion, valga la redundancia; y el segundo en caso de que no exista la variable.
+
+Pasa lo mismo con la declaracion de variables con el mismo nombre pero en diferente scope, no habrá problema en loabsoluto con ella.
+
+Una buena practica para crear variables globales es en vez de hacerlo en la etiqueta html. Lo haríamos en la pseudoclase :root, debido a que esta tiene una mayor especificidad que html.
+
+
+En el atributo style de nuestro documento HTML, tambien se pueden declarar variables. Pero recuerda que esta es denominada mala practica; al igual, habrán unas ahí.
+*/
+
+.title-props {
+  --primary-color: skyblue;
+  background-color: var(--primary-color, orange);
+  background-color: var(
+    --default-bg-color
+  ); /* Por especificidad y cascada se aplicará esta variable */
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  margin: 2rem;
+  border: dashed black medium;
+}
+
+/* ************ NOT COURSE ************** */
+
+body {
+  margin: 0;
+}
+
+.hero {
+  background-color: 5rem;
+  width: 100%;
+  height: 100vh;
+  background-color: aquamarine;
+  margin: 0;
+  text-align: center;
+}
+
+.hero > p {
+  position: absolute;
+  left: 45vw;
+  bottom: 50vh;
+  color: black;
+  font-style: bold;
+}
+
+.header > h1 {
+  margin: 0;
+}
+
+.header {
+  margin-top: 0;
+  background-color: darkcyan;
+
+  border-radius: 1.5rem;
+  color: black;
+  padding-top: 30px;
+  padding: 2rem;
+  text-align: center;
+  border: medium black ridge;
+  font-family: sans-serif;
+}
+
+/* ************ NOT COURSE ************** */
+
+/* 
+calc()
+Muy importante, cuando hagas calculos, tienes que dejar un espacio entre el operador y el operando. De lo contrario la opereacion se volvera loca
+ */
+.ch10 {
+  --padding-size: 2ch;
+  --num-ch: 10ch;
+  background-color: var(--default-bg-color);
+  font-size: 2rem;
+  padding: var(--padding-size);
+  width: calc(var(--num-ch) + var(--padding-size) * 2);
+}
+
+/*
+ min() & max()
+Estas funciones va a aceptar valores de tamanios (ya vistos anteriormente) separados por comas y esta solo tomará el valor de acuerdo a la funcion
+ */
+
+.min-max {
+  background-color: var(--default-bg-color);
+  margin: 1rem;
+  width: min(300px, 20vw);
+  height: max(200px, 50vh);
+}

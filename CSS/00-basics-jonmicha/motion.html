@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movimiento en CSS</title>
+    <link rel="stylesheet" href="css/motion.css" />
+  </head>
+  <body>
+    <h1>Movimiento en CSS</h1>
+    <hr />
+    <section class="transitions">
+      <h2>Transiciones</h2>
+      <div class="box"></div>
+      <article class="card">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+        de pantalla"
+        />
+      </article>
+    </section>
+    <hr />
+    <section class="transforms">
+      <h2>Transformaciones</h2>
+      <h3>Transformaciones en 2D</h3>
+      <article class="card transform-2d">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+       de pantalla"
+        />
+      </article>
+      <h3>Transformaciones en 3D</h3>
+      <article class="card transform-3d">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+      de pantalla"
+        />
+      </article>
+      <h3>Origen de la Transformacion</h3>
+      <article class="card transform-origin">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+      de pantalla"
+        />
+      </article>
+    </section>
+    <hr />
+
+    <section class="animations">
+      <h2>Animaciones</h2>
+      <article class="card my-animation">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+        de pantalla"
+        />
+      </article>
+      <article class="card my-animation-2">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+        de pantalla"
+        />
+      </article>
+      <article class="card my-animation-3">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+      de pantalla"
+        />
+      </article>
+      <article class="card animation-multiple">
+        <img
+          src="assets/Captura de pantalla 2022-08-20 202010.png"
+          alt="captura
+      de pantalla"
+        />
+      </article>
+    </section>
+    <hr />
+    <section class="motion-examples">
+      <h2>Efectos de Movimiento en CSS</h2>
+      <h3>Flip Cards</h3>
+      <article class="flip-card-1">
+        <div class="flip-face flip-front">
+          <img
+            src="assets/Captura de pantalla 2022-08-20 202010.png"
+            alt="captura
+        de pantalla"
+          />
+        </div>
+        <div class="flip-face flip-back">
+          <img src="assets/chapter_picture_1.jpg" alt="si" />
+        </div>
+      </article>
+      <article class="flip-card-2">
+        <div class="flip-face flip-front">
+          <img
+            src="assets/Captura de pantalla 2022-08-20 202010.png"
+            alt="captura
+      de pantalla"
+          />
+        </div>
+        <div class="flip-face flip-back">
+          <img src="assets/chapter_picture_1.jpg" alt="si" />
+        </div>
+      </article>
+      <h3>Fade in / Fade out</h3>
+      <span class="fade-in">😌</span>
+      <span class="fade-out">❣️</span>
+      <h3>Sacudir</h3>
+      <div class="shake">☕</div>
+      <h3>Dibujando y animando con CSS</h3>
+      <h3>Pulsaciones</h3>
+      <article class="pulse-article">
+        <span><b>I love u</b></span>
+        <div class="pulse">❤️</div>
+        <br />
+        <br />
+        <div class="pulse-2">Eres el CSS de mi HTML</div>
+        <div class="heart"></div>
+      </article>
+      <h3>Loader / Spinner</h3>
+      <div class="spinner"></div>
+      <h3>Botones Animados</h3>
+      <button class="btn anim-bottom to-left">Animacion Izquierda</button>
+      <button class="btn anim-bottom to-center">Animacion Centro</button>
+      <button class="btn anim-bottom to-right">Animacion Derecha</button>
+      <button class="btn anim-bg-grandient">Fondo con Gradiente</button>
+      <h3>Menú de Pestañas (Tabs)</h3>
+      <nav class="tabs-menu">
+        <input type="radio" name="tabs" id="tab-1" checked />
+        <label for="tab-1">Seccion 1</label>
+        <input type="radio" name="tabs" id="tab-2" />
+        <label for="tab-2">Seccion 2</label>
+        <input type="radio" name="tabs" id="tab-3" />
+        <label for="tab-3">Seccion 3</label>
+        <input type="radio" name="tabs" id="tab-4" />
+        <label for="tab-4">Seccion 4</label>
+        <div class="tab-bg-hover"></div>
+      </nav>
+      <h3>Menu Off Canvas</h3>
+      <input type="checkbox" class="off-canvas-btn" name="" id="" />
+      <label class="off-canvas-burger"></label>
+      <nav class="off-canvas-menu">
+        <div class="off-canvas-menu-container">
+          <a href="#" class="off-canvas-link">Seccion 1</a>
+          <a href="#" class="off-canvas-link">Seccion 2</a>
+          <a href="#" class="off-canvas-link">Seccion 3</a>
+          <a href="#" class="off-canvas-link">Seccion 4</a>
+          <a href="#" class="off-canvas-link">Seccion 5</a>
+        </div>
+      </nav>
+      <h3>Ventana Modal</h3>
+      <a href="#modal-1">Abrir Modal</a>
+      <article id="modal-1" class="modal">
+        <div class="modal-container">
+          <a href="#cerrar" class="modal-close">X</a>
+          <h2>Esto es una Ventana Modal</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at
+            soluta eaque. Quis impedit cupiditate nihil quo eos modi eius
+            dolores laboriosam asperiores? Quo quam non nam, commodi iure
+            voluptatibus?
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://cabinothing.netlify.app"
+                target="_blank"
+                rel="noopener"
+                >zzz</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://cabinothing.netlify.app"
+                target="_blank"
+                rel="noopener"
+                >zzz</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://cabinothing.netlify.app"
+                target="_blank"
+                rel="noopener"
+                >zzz</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://cabinothing.netlify.app"
+                target="_blank"
+                rel="noopener"
+                >zzz</a
+              >
+            </li>
+          </ul>
+        </div>
+      </article>
+      <h3>Star Wars Intro</h3>
+      <article class="star-wars">
+        <div class="star-wars-container">
+          <h2>Episode VIII</h2>
+          <h3>THE LAST JEDI</h3>
+          <p>
+            The FIRST ORDER reigns. Having decimated the peaceful Republic,
+            Supreme Leader Snoke now deploys his merciless legions to seize
+            military control of the galaxy.
+          </p>
+          <p>
+            Only General Leia Organa's band of RESISTANCE fighters stand against
+            the rising tyranny, certain that Jedi Master Luke Skywalker will
+            return and restore a spark of hope to the fight.
+          </p>
+          <p>
+            But the Resistance has been exposed. As the First Order speeds
+            toward the rebel base, the brave heroes mount a desperate escape....
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <a href="index.html#temario">☝️</a>
+  </body>
+</html>

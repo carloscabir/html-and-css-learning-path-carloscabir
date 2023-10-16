@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Aprendiendo HTML</title>
+ <meta name="description" content="en esta pagina estamos aprendiendo
+ los fundamentos de HTML con @jonmircha">  <!-- Entre 55 y 65 caracteres(title) (no mas de 165 caracteres para la description)-->
+ <link rel="stylesheet" href="/CursoWebDevelopent/HTMLdesdeCero/assets/styles.css">
+ <!-- canonical, para determinar una url canonica (raro el  concepto pero es con un paso de variables), por ejemplo: un evento de descuentos de Amazon y vamos a tener diferentes url's debido a el evento (la original (canonica) y la del evento que ya va a tener un paso de variables que modifiquen el precio del producto ya asignandoles un nuevo valor).
+ Es decir vamos a tener varias url para llegar a un mismo producto, perooooooo, la canonica es la original para llegar a dicho producto; un claro ejemplo son los canvas de los animes que le gustan a Carlos xd -->
+ <link rel="canonical" href="http://tudominio.com/la-url-canonica">
+ <!-- Etiqueta fabicon, la de la esquina de la pestania xddd (16x16px, pero lo mas recomendable es la mayor resolucion posible) (el formato aceptado es png)
+ -->
+ <!-- En pc -->
+ <link rel="icon" href="/CursoWebDevelopent/HTMLdesdeCero/img/Hikari_THB_Fabicon.jpg">
+ <!-- Movil -->
+ <link rel="apple-touch-icon" href="/CursoWebDevelopent/HTMLdesdeCero/img/Hikari_THB_Fabicon.jpg">
+ <!-- Ademas otra meta etiqueta, para moviles (en especial para cambiar el color de la barra de buscador) (esta si es una metaetiqueta) cabe a aclarar que aqui solo aceptara el color en valor hexadecimal -->
+ <meta name="theme-color" content="FF6600">
+ <!--Ahora para tener contenido enriquecido en redes sociales podemos revisar la pagina "opengraph", la misma pagina oficial nos dara contenido como meta etiquetas para ello xd (cada red social lo maneja de manera diferente o adicionalmente (esta puede agregar un par de meta etiquetas demás), fb es una que usa este cosito)  (todo con open graph) -->
+<meta property="og:title" content="Aprendiendo HTML">
+<meta property="og:description" content="en esta pagina estamos aprendiendo
+los fundamentos de HTML con @jonmircha">
+<meta property="og:image" content="img/Hikari_THB.png"> <!-- Para esto tiene que ser relativa al dominio (direccion absoluta de la imagen que se encuentre en internet), de lo contrario no cargara el icon. SI o si tene que tener eso, es decir, cuando ya sepas como se va a llamar tu dominio, pues pones tu dominio en el content junto a la imagen, si pones solo la direccion local no funcionara. -->
+<meta property="og:url" content="https://tudominio.com/index.html"> <!-- (_canonica) Especificar el index podria o no ser necesario especificarlo, cuando subes tu pagina usualmente los servidores siempre busca el index por defecto -->
+<!-- Meta etiqueta para twitter -->
+<meta name="twitter:card" content="sumary" >
+<meta name="twitter:site" content="@jonmircha"> <!-- Cabe a aclarar que estas meta etiquetas no afectan en nada nuestro contenido HTML, solo para las redes sociales en forma de como se representa xdd -->
+
+<style>
+    /*Una de las tres formas de aplicar styles a un documento HTML
+    vendria siendo esta forma
+    directamente en la etiqueta
+    y con una hoja de estilos como tal (que esta vendria siendo la forma mas correcta) pero primero lo tenemos que enlazar con un link Xd*/
+       h2{
+        color: rgb(207, 189, 255);
+       } 
+</style>
+</head>
+<body>
+    <h2 id="inicio">Aprendiendo HTML</h2> <!--Recuerda que solo puedes poner un aolo h1 por documento-->
+    <!-- esto es un comentario, que? -->
+ <p>Hola, esta no es mi primera pagina</p>
+ <p>Aprendiendo sobre disenio web</p>
+ <h2>Temario</h2>
+ <!-- ul>li*18>a -->
+ <ul>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#encabezados">Encabezados HTML</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#etiquetas-basicas">Etiquetas de texto basicas</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#etiquetas-texto-semanticas">Etiquetas de Texto Semanticas</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#saltos-linea">Saltos de linea junto salto semantico</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#formateos-preformateos">Formateos o preformateos</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#etiquetas-semanticas">Etiquetas semanticas estructurales de maquetacion HTML</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#etiquetas-bloque-linea">Etiquetas de Bloque VS Etiquetas de Línea</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#css">Estilos CSS en HTML</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#js">Scripts en HTML</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#imagenes">Imágenes</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#vectores">SVG</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#figuras">Figuras</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#listas-ordenadas">Listas Ordenadas</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#listas-desordenadas">Listas Desordenadas</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#listas-definicion">Listas de Definicion</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#tablas">Tablas</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#enlaces">Enlaces</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#enlaces-interactivos">Enlaces Interactivos</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#audio">Etiquetas de Audio</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#video">Etiquetas de Video</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#iframes">Iframes</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#formularios">Formularios</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#data-attributes">Data Attributes</a></li>
+     <li><a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#accesibilidad">Accesibilidad Web (Intro)</a></li>
+ </ul>
+  <hr>
+  <h2 id="encabezados">Encabezados HTML</h2>
+  <h1>Encabezado de nivel 1</h1>
+  <h2>Encabezado de nivel 2</h2>
+  <h3>Encabezado de nivel 3</h3>
+  <h4>Encabezado de nivel 4</h4>
+  <h5>Encabezado de nivel 5</h5>
+  <h6>Encabezado de nivel 6</h6>
+  <hr>
+  <h2 id="etiquetas-basicas">Etiquetas de texto basicas</h2>
+  <p>Un parrafo</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing 
+      elit. Facere neque placeat quae, quibusdam soluta quod asperiores
+       iure eaque explicabo voluptas aliquam quasi eveniet. Ipsam
+        cumque a utem illum, deserunt quasi dolor.
+    </p>
+    <p>
+      Palabras en: <b>negrita</b>, <i>italika (no la moto)</i>, <u>subrayado</u>, e=mc <sup>2</sup>,
+      h<sub>2</sub>O, <mark>marcado <!---Aunque se recomienda hacerlo con CSS-->s</mark>, <small>letras pequenias</small>.  
+    </p>
+    <hr>
+     <h2 id="etiquetas-texto-semanticas">Etiquetas de Texto Semanticas</h2>
+    <!---Etiquetas de texto-->
+    <p>
+    <strong>Este texto es importante <!--Esto es una entonacion, parecida a bold, recuerda HTML semantico--></strong>,
+    <em>Este texto hace enfasís</em>,
+     <blockquote><!---Una cita de referencia--> Yo solo se que no se nada</blockquote>
+     <cite>-Socrates</cite> <!--Esto hace una tipo tabulacion junto a una italika-->
+    <time> 10-12-22 <!---Tiempo xd--></time> 
+    </p>
+    <hr>
+     <h2 id="saltos-linea">Saltos de linea junto salto semantico</h2>
+    <!--Saltos de linea-->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing <br>
+        elit. Voluptate tenetur aspernatur molestiae ipsa perspiciatis. <br>
+        Nam reprehenderit omnis culpa ducimus nobis id, vitae doloribus minus <br> 
+        dicta molestias facere, iste libero ab. <br>
+    <p>
+    </p>        
+        <hr> <!--Salto semantico de contenid0 (barra xd)-->
+        <br>
+        <h2 id="formateos-preformateos">Formateos o preformateos</h2>
+        <p>
+        <pre>
+            Tareas por hacer
+         -HTML
+         -CSS
+         -JS
+         -Node.js
+        </pre>
+        </p>
+        <p>
+            <code>
+                Este texto esta en formato de codigo
+            </code>
+        </p>
+        <p> <!--Ejemplo de un codigo kk de JS xd-->
+            <code>
+                function saludar (nombre){
+                    console.log(`Hola, mi nombre es ${nombre}`);
+                } <!--SI es que tu codigo tiene picoparentesis puedes checar la documentacion de HTML que ya hemos visto-->
+            </code>
+        </p>
+        <hr>
+        <h2 id="etiquetas-semanticas">Etiquetas semanticas estructurales de maquetacion HTML</h2>
+        <div>Div</div> <!--Usualualmente antes de la llegada de HTML5, de esta manera se agrupaban etiquetas, ahora ya visto como mala practica ademas de que podian existir confusiones sobre ello. Despues de HTML5 llegaron estas etiquetas estructurales-->
+        <header>header - Cabecera del sitio web o seccion<!--Cabe a aclarar que se si se pueden usar varias de estas etiquetas estructurales de maquetacion, todo depende de tus necesidades (EXEPTO EN ALGUNAS XD)--></header>
+        <main>
+            main - define la seccion principal del documento, solo puede 
+            existir una etiqueta main por documento <!--Como el h1, solo puede existir uno por documento-->
+        </main>
+        <footer>footer - Pie de pagina de un sitio web o de una seccion </footer>
+        <nav>nav - Representa una navegaciom</nav>
+        <article>
+            article - Representa una seccion de autocontenid (
+                que por si sola se explica) tambien puede tener footer, header, section, content y demas
+        </article>
+        <aside>aside - Representa contenido complementario o secundario <!--Por ejemplo articulos relacionados a tu pagina o vlog, pudieses meter una seccion--></aside>
+        <section>section - Representa una seccion de contenido generico</section> <!--Las semanticas son subjetivas, todo dependera del contenido :^)-->
+        <address>address - Representa una direccion o una informacion de contacto<!--por ejemplo, queso babas 293 avenida te lo entierro casas color orina. qie--></address>
+        <!--El concepto de la maquetacion la veremos con el transcurso de este curso-->
+        <!--Es probable de que en sitios viejos te encuentres con MUCHOOOSS div, esto debido a los documentos HTML viejos por que no contenian las etiquetas semanticas estructurales-->
+        <hr>
+         <h2 id="etiquetas-bloque-linea">Etiquetas de Bloque VS Etiquetas de Línea</h2>
+        <div style="background-color: yellow; color: red;">La etiqueta de bloque por exelencia es la div, una etiqueta de
+            bloque es aquella que genera saltos de linea (es decir enter) con sus etiquetas hermanas
+        <!--Un ejemplo lo veremos con un estilo de background (haciendo refernecia a una etiqueta de bloque)-->
+        </div>
+        <br>
+        <span style="background-color: greenyellow;">La etiqueta de linea por exelencia es la span, una etiqueta de linea solo ocupa
+            el espacio necesario que tiene su contenido
+            <!--En cambio de la etiqueta div, span solo ocupa el espacio que tene su contenido
+            Ahora identifico a una etiqueta div como envidiosa xd-->
+        </span>
+        <span>Hola soy otra span
+            <!--Las etiquetas en linea no van a ingresar un enter, por eso es que se llaman etiquetas de linea
+            Este span saldra a un lado del span anterior -->
+        </span>
+        <!--En si las etiquetas de bloque tienen dos naturalezas
+        la div naturaleza de bloque, mientras que span naturaleza de linea.-->
+        <hr>
+        <h2 id="css">Estilos CSS en HTML</h2>
+        <hr>
+        <h2 id="js">Scripts en HTML</h2>
+        <hr>
+        <h2 id="imagenes">Imágenes</h2>
+        <img src="https://placeimg.com/200/200/any" alt="Imagen aleatoria">
+        <!--Que tipos de imagenes soporta?
+        Pues los que la mayoria de los navegadores soporta.
+        jpg, png, gif y svg(vectores) -->
+        <hr>
+        <h2 id="vectores">SVG</h2>
+        <a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#inicio">up</a>
+        <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<rect x="72.351" y="66.782" width="33.391" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="105.741" y="33.391" width="33.391" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="139.132" width="233.736" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="372.868" y="33.391" width="33.391" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="406.259" y="66.782" width="33.391" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="5.569" y="211.475" width="33.391" height="66.782"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="473.04" y="211.475" width="33.391" height="66.782"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="72.351" y="378.429" width="33.391" height="33.391"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M473.045,211.475V100.172h-33.391v77.912h-33.382V133.57h-0.009v-0.007h-33.391v-33.391h-33.389v-33.39L172.53,66.782
+			v33.391h-33.393v33.399h-33.382v44.513h-33.4v-77.912H38.964v111.303h66.79v66.782h-66.79v100.172h33.391v-66.775h66.782v33.384
+			h33.376v33.391h66.796v66.782h-66.796v-66.782h-33.376v33.391h-33.391v33.399H72.367L72.355,512h367.299v-66.782v-0.009h-33.386
+			v-33.386h-0.004v-0.003h-33.39v-33.391h-0.001h-33.389v-33.391h33.389v-33.384h100.172v-33.398h-66.773v-66.782H473.045z
+			 M172.527,166.953h33.391v44.521h-33.391V166.953z M339.481,278.256h-33.391v33.399H205.918v-33.399h-33.391v-33.391h33.391
+			v33.391h100.172v-33.391h33.391V278.256z M339.481,211.474h-33.391v-44.521h33.391V211.474z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+        <!--Estos no vienen siendo imagenes, si no vectores
+        El mundo de los svg son codigos, si es que haces logotipos en una herramienta vectorial pues de ahí lo sacaremos
+        Las dos formas en la que puedes tabajar con vectores es pegando tu codigo tal cual a tu documento HTML o con una etiqueta img
+        lugares donde puedes encontrar SVG: css.gg, svg-->
+        <hr>
+        <h2 id="figuras">Figuras</h2> <!--Estas normalmente llevan una imagen con un pie sobre esta, p.e las figuras de los libros de texto de México-->
+        <figure>
+            <img src="img/tabla-periodica anal.png" alt="Tabla de los elementos" width="auto" height="500px">
+            <figcaption>Tabla de los elementos</figcaption>
+            <!--Esto si gustas lo puedes usar, pero no es obligatorio
+            Pero si te gustaria tener un codigo mas semantico pues adelante-->
+        </figure>
+        <hr>
+        <h2 id="listas-ordenadas">Listas Ordenadas</h2>
+        <h3>Estaciones del anio</h3>
+        <ol> 
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otonio</li>
+            <li>Invierno</li>
+        </ol>
+        <ol start="3"> <!--Si es que quieres que tu lista NO empieze desde uno podrias hacerlo con el atributo start-->
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otonio</li>
+            <li>Invierno</li>
+        </ol>
+        <ol reversed> <!--Esto revertira la lista y este atributo se llama boolean XD q--> 
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otonio</li>
+            <li>Invierno</li>
+        </ol>
+        <ol type="I"> <!--Aquí cambiamos el formato de la ennumeracion a numeros romanos y de pueden cambiar a más!--> 
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otonio</li>
+            <li>Invierno</li>
+        </ol>
+        <hr>
+        <h2 id="listas-desordenadas">Listas Desordenadas</h2>
+        <ul type="disc"> <!--Este seria el valor por defecto, disc (de la vinieta)-->
+            <li>Hacer un reloj digital</li>
+            <li>Hacer el mimo app</li>
+            <li>Leer Historia Universal </li>
+        </ul>
+        <ul type="cirle"> <!--La vinieta sera de circulo-->
+            <li>Hacer un reloj digital</li>
+            <li>Hacer el mimo app</li>
+            <li>Leer Historia Universal </li>
+        </ul>
+        <ul type="square"> <!--La vinieta sera un cuadrado-->
+            <li>Hacer un reloj digital</li>
+            <li>Hacer el mimo app</li>
+            <li>Leer Historia Universal </li>
+        </ul>
+        <hr>
+        <h2 id="listas-definicion">Listas de Definicion</h2>
+        <!--Aqui no vamos a necesitae de los list items (li), solo de dos, dl, dt y dd-->
+         <dl>
+             <dt>HTML</dt>
+             <dd>Es un lenguaje de marcado que define contenido en la web</dd> <!--Es la definicion de la data, tal cual la abreviacion-->
+             <dt>CSS</dt>
+             <dd>Es un lenguaje de definicion que da estilos al codigo HTML</dd>
+             <dt>JavaScript</dt>
+             <dd>Es el lenguaje de la web</dd>
+         </dl> <!--Feo-->
+         <hr>
+         <h2 id="tablas">Tablas</h2>
+         <table>
+             <tr>  <!--Para definir los parrafos de una tabla lo hacemos con tr y pues su contenido con td-->
+                 <td>Nombre</td>
+                 <td>Constelacion</td>
+                 <td>Tipo</td>
+             </tr>
+             <tr>
+                 <td>Ikki</td>
+                 <td>Fenix</td>
+                 <td>Bronce</td>
+             </tr>
+             <tr>
+                 <td>Shaina</td>
+                 <td>Ofiuco</td>
+                 <td>Plata</td>
+             </tr>
+             <tr>
+                 <td>Saga</td>
+                 <td>Geminis</td>
+                 <td>Dorado</td>
+             </tr>
+             <!--Con esto quedaria una tabla sencilla, pero espera, que tenemos una mas elaborada!-->
+            </table>
+            <br><br><br>
+         <table> <!--Piensa en estas etiquetas como las cabeceras de un documento HTML-->
+             <thead>
+                 <tr>
+                     <th colspan="3">Tabla de los Saltos de Athena</th><!--Aqui como tal esto solo se va a expandir PERO no va a ocupar las tres celdas como tal, pues lo hacemos con el atributo colspan y especificamos el numero de columnas que querramos que ocupe.-->
+                 </tr>
+             <tr>
+                 <th>Nombre</th>   <!--Aqui en vez de definirlos con td, lo hacemos con un th, la diferencia entre estos es solo que el th pone en negritas los caracteres que estan dentro de ellos-->
+                 <th>Constelacion</th>
+                 <th>tipo</th>
+             </tr>
+             </thead>
+             <tbody>
+                <tr>
+                    <td>Ikki</td> <!--Y si quisiesemos que ocupara las celdas de los parrafos lo hacemos con rowspan (si te das cuenta la primera palabra especifica como xd)-->
+                    <td>Fenix</td>
+                    <td>Bronce</td>
+                </tr>
+                <tr>
+                    <td>Mistry</td>
+                    <td>Lagarto</td>
+                    <td>Plata</td>
+                </tr>
+                <tr>
+                    <td>Saga</td>
+                    <td>Geminis</td>
+                    <td>Dorado</td>
+                </tr>
+                <tr>
+                    <td>Shaina</td>
+                    <td rowspan="2">Ofiuco</td>
+                    <td>Plata</td>
+                </tr>
+                <tr>
+                    <td>Odiseo</td>
+                    <td>Plata</td>  <!--Aqui hacemos uso del rowspan de una manera inteligente que digamos q-->
+                </tr>
+             </tbody>
+             <tfoot>
+              <th colspan="3"><small>Tairitsu is forever</small></th>
+             </tfoot>
+         </table>
+         <hr>
+         <h2 id="enlaces">Enlaces</h2>
+         <a href="/CursoWebDevelopent/HTMLdesdeCero/hola.html">Hola hacia la pagina Hola</a>   
+         <!--Si lo que quieres es abrir tu enlace en otra pestania y no ocupar la que tenes abierta puedes hacer uso de el atributo target
+         Cuando estes trabajando con enlaces internos no es necesario hacer uso del atributo target, mientras que con enlaces externos sí, da igual xd
+         tambien cuando vayas a trabajar con enlaces externos puedes agregar el atributo rel con nofollow
+         esto sirve para que las aranias de los motores de busqueda para que no lo sigan, es decir para decirle a las aranias que este enlace ya no tiene que ver con tu sitio  pues esto depende de tu pagina; 
+         -->
+        <br>
+        <a href="/CursoWebDevelopent/HTMLdesdeCero/hola.html" target="_blank" rel="nofollow">Hola hacia la pagina Hola (do)</a>   
+        <br>
+        <!--Al igual podemos usar imagenes o vectores para nuestros vinculos de enlaces-->
+        <a href="/projectJs/ola nena/e.html" target="_blank" rel="nofollow">
+        <img src="/CursoWebDevelopent/HTMLdesdeCero/img/Hikari_THB.jpg" alt="Visita mi sitio web no sé" width="200px" height="200px">
+        </a>
+        <hr>
+        <h2>Enlaces internos</h2> <!--Vamos a armar un temario con enlaces internos sobre todo nuestro progreso en este curso!-->
+        <!--Arriba esta nuestro codigo sobre los enlaces en nuestro temario junto a un estilo css en nuesta hoja de estilos de este documento-->
+        <a href="mailto:camachobrigido67@gmail.com">Enlace de correo electrónico</a>
+        <br>
+        <a href="tel:52123467890">Enlace a teléfono</a> <!--Todo esto va a depender de la configuracion del dispositivo (ojo)-->
+        <br>
+        <a href="https://api.whatsapp.com/send?phone=527227980846&text=Hola!" target="_blank">API Whatsapp</a>
+        <br>
+        <a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#inicio">
+        <figure>
+        <img src="/CursoWebDevelopent/HTMLdesdeCero/img/sadblob.gif" alt="sadblob">
+        <figcaption style="color: black;">Up</figcaption>
+        </figure>
+        </a>
+        <hr>
+        <h2 id="enlaces-interactivos">Enlaces Interactivos</h2>
+        <button onclick="alert('Ella no te ama pa')">Esto es un botón</button> <!--Una mala practica obviamente xd-->
+        <br>
+        <details>
+        <summary>Top Mejores novias que ha tenido Carlos</summary>
+        <article>
+        <h3>Ninguna, todas fueron las mejores</h3>
+        <p>1. Karol</p>
+        </article>
+        </details>
+        <!--Detail abierto por defecto-->
+        <details open>
+        <summary>Top Mejores novias que ha tenido Carlos</summary>
+        <article>
+        <h3>Ninguna, todas fueron las mejores</h3>
+        <p>1. Karol</p>
+        </article>
+        </details>
+        <!--Ventana Modal (experimental)-->
+        <!-- <dialog open="">
+            A ochoa lo mataron a balazos
+        </dialog> -->
+        <hr>
+        <h2 id="audio">Etiquetas de Audio</h2>
+        <p>Acurrucar - Ed Maverick</p>
+        <audio src="/CursoWebDevelopent/HTMLdesdeCero/media/Ed Maverick - Acurrucar(MP3_160K).mp3"
+         controls preload ></audio> <!--Tambien tenemos propiedades como: autoplay(que hará que se reproduzca automaticamente nuestra etiqueta (esta solo funcionara en algunos navegadores de escritorio y no en moviles, debido a que tienes que dar permiso a reproducir ello)), loop(que hara un ciclo), muted (como su nombre lo dice, va a empezar el audio muteado) y uno recomendable, preload (esto sirve para que el audio se precargue, tipo tu usuario entra a tu pagina y aunque aun no haya empezado a reproducir el audio que ya este precargado en la memoria cáche de su navegador (simplemente para que tenga el audio precargado y no tenga que esperar a que cargue este xd))-->
+        <hr>
+        <!--Practicamente video viene siendo lo mismo que audio xd (tambien en caracteristicas, adicionalmente tiene una etiqueta poster, que es la miniatura)-->
+        <h2 id="video">Etiquetas de Video</h2>
+        <video src="/CursoWebDevelopent/HTMLdesdeCero/media/Ed Maverick - Acurrucar(480P).mp4" controls preload poster="img/chapter_picture_2.jpg"></video>
+        <!--Los terminos de ancho y alto se sugiere trabajarlo con css-->
+        <br>
+        <a href="/CursoWebDevelopent/HTMLdesdeCero/index.html#inicio">
+        <figure>
+        <img src="/CursoWebDevelopent/HTMLdesdeCero/img/catpet.gif" alt="catpet" width="100px"
+        height="100px">
+        <figcaption style="color: #222;">Gato (temario)</figcaption>
+        </figure>
+        </a>
+        <hr> <!--Esto no se recomienda ya que la mejor manera seria con Js via AJAX, pero cuando tengas que incrustar un elemento de otra pagina esta etiqueta te va a servir muy bien, pero ten en cuenta que puedes tener problema al realizar la carga-->
+        <h2 id="iframes">Iframes</h2>
+        <iframe src="hola.html" frameborder="1"></iframe>
+        <br>
+        <!--Al igual podemos mandar a llamar enlaces externos xd, peroooo, hay paginas que estan protegidas de esto eh-->
+        <iframe src="https://jonmircha.com" frameborder="1"></iframe>
+        <br>
+        <iframe src="https://facebook.com" frameborder="1"></iframe>
+        <br>
+        <iframe src="/CursoWebDevelopent/HTMLdesdeCero/media/cheatsheet-a5.pdf" frameborder="1"></iframe>
+        <!--Si es que has visto en una pagina web x, hay videos de Youtube o mapas, pues estas utilizan Iframes para esto, ejemplo abajo -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120384.07552550062!2d-99.21850718808588!3d19.455465054893974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2014958cf2eef%3A0xc036183cc62ceb9f!2zTmF1Y2FscGFuIGRlIEp1w6FyZXosIE3DqXgu!5e0!3m2!1ses-419!2smx!4v1655054272892!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fQYuHv13SDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!--Recuerda que no es recomendable usar mas de un Iframe en tu documento HTML debido a cuestiones de carga, así que no abuses xdxd-->
+        <hr>
+        <h2 id="formularios">Formularios</h2>
+        <h3>Elementos de Formularios</h3>
+        <!--Tenemos varios tipos de input (no formularios) cabe aclarar que los input son etiquetas de linea o-->
+        <input type="text">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="radio">
+        <br>
+        <input type="date">
+        <br>
+        <input type="color">
+        <br>
+        <input type="button" value="button">
+        <br>
+        <input type="submit"> <!--Este enviara el formulario-->
+        <br>
+        <input type="reset"> <!--Este restablecera el formulario-->
+        <br>
+        <input type="file"> <!--Este pedira seleccionar un archivo y si no lo seleccionas a un lado del texto nos dira, archivo no seleccionado (dependiendo del idioma del S.O)-->
+        <br>
+        <input type="file" multiple> <!--Este nos permitira seleccionar varios archivos a diferencia al anterior-->
+        <br>
+        <input type="hidden" name="idioma" value="es">  <!--Estos le serviran como programador cuando envien este elemento del formulario; al igual cuando enviamos el input este tiene que tener un nombre para poder guardarlo en variables -->
+        <br>
+        <input type="email" name="" id=""> <!--Caja de tipo Email-->
+        <br>
+        <input type="number" name="numero" id="num"> <!--Estos tipos de input seran semanticos con los dispositivos tactiles-->
+        <br>
+        <input type="tel" name="telefono" id="tel">
+        <br>
+        <input type="password">
+        <br>
+        <input type="search"> <!--Buscador :D-->
+        <br>
+        <textarea cols="30" rows="10"></textarea> <!--Textarea, esto serviria para los comentarios; en los atributos podemos especificar los parrafos y columnas-->
+        <br>
+        <select name="" id="">
+            <option value="">HTML</option>
+            <option value="">CSS</option>
+            <option value="">JavaScript</option>
+        </select>
+        <br>3
+        <select name="" id="" multiple>
+            <option value="">HTML</option>
+            <option value="">CSS</option>
+            <option value="">JavaScript</option>
+            <option value="">Phyton</option>
+            <option value="">Java</option>
+        </select>
+        <br>
+        <input type="text" value="jonmircha" readonly disabled> <!--A los input les podemos agregar un atributo para que solo se puedan leer; si es que vas a agregar este atributo quiza tambien tengas que agregar el atributo disabled (que le dara un toque de que esta desahabilitado)--> 
+        <br>
+        <input type="text" name="" placeholder="Inserta tu nombre">
+        <br>
+        <h3>Ejemplo de Formulario</h3>
+        <h4>Formulario de Login</h4>
+        <!-- https://jonmircha.com/?usuario=tilin&password=sexo (resultado de method get)(esta es la variable y su valor de nuestro formulario) el parentesis "?" significa que tiene variables (despues de el xd)-->
+       <!-- https://jonmircha.com/ (resultado de method post)--> 
+        <form action="https://jonmircha.com/" method="post" autocomplete="off"> <!--El accion es la direccion donde se enviara nuestro formulario--> <!-- No hay necesidad de que especifiques con el method, por que hará lo mismo que si no lo tuviese (a hacer lo mismo me refiero a obtener "GET" (y enviara los datos a la url de el action)); por que hace esto?, por que GET es el metodo por defecto de los formularios xdxd -->
+         <!-- SI el action no existiera, o no especificaramos el action pues el formulario se va a autoprocesar (en la misma pagina va a hacer el method) -->
+            <!-- El metodo POST tambien permite enviar, pero este lo va a enviar a las cabeceras del documento DE FORMA OCULTA -->
+            <input type="text" name="usuario" id="usuario" placeholder="Escribe tu Usuario"
+             required pattern="^[A-Za-z]+$"  title="El campo solo acepta letras"> <!--El name es la variable de formulario; tal cual, especificar lo que es xd?-->
+            <label for="usuario">User</label> <!-- Label sera la etiqueta para nuestro input y lo podemos vincular por el id del input -->
+            <br> <!-- EL pattern es tipo una expresion regular de Js (Tai ya tendra idea de esto xd) -->
+            <input type="email" autocomplete="off" placeholder="Inserta tu correo electronico">
+            <br>
+            <input type="password" name="password" id="password" placeholder="Escribe tu contraseña" required
+            pattern="^[A-Za-z0-9]+$"> <!--El name, tal cual, especificar lo que es xd?--> <!-- El title lo usaremos para especificar la expresion regular si es que tenemos xd -->
+            <label for="password">Password</label>
+            <br>
+            <input type="submit"> 
+            <br>
+            <input type="reset">
+        </form>
+        <p>Elige tu idioma</p>
+        <h4>Selects, Radios y Checkbox</h4>
+        <!-- http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=fr#formularios (francés)
+         http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=en#formularios Inglés
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=es&idioma=en&idioma=it#formularios (multiple) 
+        
+        (Sin value, solo nos dara el checked = on)
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=fr&lenguaje=on#formularios
+        (Value)
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=en&lenguaje=py#formularios (Phyton)
+    
+        Checkbox
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=en&lenguaje=js&intereses=deportes&intereses=musica&intereses=medio_ambiente&intereses=politica#formularios
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=en&lenguaje=js&intereses=deportes&intereses=musica&intereses=medio_ambiente&intereses=politica#formularios
+   
+        aceptas los terminos 
+        http://127.0.0.1:5500/CursoWebDevelopent/HTMLdesdeCero/index.html?idioma=en&lenguaje=js&terminos=on#formularios 
+    
+    
+    
+    -->
+        <form>
+        <select name="idioma" required >
+        <option value="">Elige una opción</option>
+        <option value="es">Español</option>
+        <option value="en" selected>Inglés</option>
+        <option value="fr">Francés</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Portugues</option>
+        </select>
+        <p>Elige tu lenguaje de programacion favorito</p>
+        <input type="radio" name="lenguaje" id="radio-js" value="js" required>
+        <label for="radio-js">JavaScript</label>
+        <input type="radio" name="lenguaje" id="radio-py" value="py">
+        <label for="radio-py">Phyton</label>
+        <input type="radio" name="lenguaje" id="radio-c++" value="c++">
+        <label for="radio-c++">C++</label> <!-- Para evitar la seleccion multiple de Radios, tienes que asignar el mismo name (nombre) a tus input, debido?, pues si es que te sucede el error xd  -->
+        <p>Elige tus intereses</p>
+        <label required>
+            <input type="checkbox" name="intereses" value="deportes">
+            Deportes
+            <br>
+        </label>
+        <label>
+            <input type="checkbox" name="intereses" value="musica" checked>
+            Música
+            <br>
+        </label>
+        <label>
+            <input type="checkbox" name="intereses" value="medio_ambiente" checked>
+            Medio ambiente
+            <br>
+        </label>
+        <label>
+            <input type="checkbox" name="intereses" value="politica">
+            Politica
+            <br>
+        </label>
+        <p>
+            <input type="checkbox" name="terminos" required>
+            Aceptas los terminos y condiciones?
+        </p>
+        <input type="submit">
+        <input type="reset">
+        </form>
+        <!-- Vamos a hacer uso de un servicio gratis llamado https://formsubmit.co-->
+        <form method="POST" action="https://formsubmit.co/carlangascamachobrigido@gmail.com.com">
+        <h4>Formulario de Contacto</h4>
+        <input type="text" name="nombre" placeholder="Inserta tu nombre" 
+        pattern="^[A-Za-z\s]+$" title="Nombre solo acepta letras y espacios en blanco" required>
+        <br>
+        <input type="email" name="correo" placeholder="Inserta tu correo electronico"
+        title="Correo invalido" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required>
+        <br>
+        <textarea name="comentarios" id="" cols="30" rows="10" required></textarea>
+        <br>
+        <input type="submit">
+        </form>
+        <hr>
+        <h2 id="data-attributes">Data Attributes</h2>
+        <!-- Esto ya visto en el curso de JS (que estamos en ello :^) ) -->
+        <ul>
+          <li data-id="1" data-name="spring">Primavera</li>
+          <li data-id="2" data-name="summer">Verano</li>
+          <li data-id="3" data-name="autumn">Otonio/li>
+          <li data-id="4" data-name="winter">Invierno</li>
+        </ul>
+        <hr>
+        <h2 id="meta-etiquetas">Meta Etiquetas SEO</h2>
+        <p>Contenido en la cabecera :^)</p>
+        <hr>
+        <h2 id="accesibilidad">Accesibilidad Web</h2>
+        <!-- Esto es pensando a discapacidades a personas, pero todo esto depende de la etica del desarrollador <3 -->
+        <h3 role="title">Las estaciones del anio</h3>
+        <ul> <!-- Tab index nos servira para ser accesibles con el tabulador, mas que nada navegar sin mouse. Y role para dar contenido enriquecido a personas con discapacidad  -->
+          <li tabindex="1" role="listitem">Primavera</li>
+          <li tabindex="2" role="listitem">Verano</li>
+          <li tabindex="3" role="listitem">Otonio</li>
+          <li tabindex="4" role="listitem">Invierno</li>
+        </ul>
+        <a href="#" aria-label="En este enlace encontraras mas informacion sobre las estaciones del anio" target="_blank" rel="noopener">Mas informacion...</a>
+        <!-- Cabe a aclarar que esta es una introduccion a la accesibilidad, todo es un mundo y seria genial implementarlo :^) Links abajo
+        W3E WAI
+        https://web.dev/accessible/
+        
+        
+        -->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <script>
+       /*  console.log("Hola estamos aprendiendo HTML");
+        alert("Ella no te ama bro");
+        prompt("Inserta tu nombre"); */
+        //Y demas xd
+        //Lo correcto seria tener tu script antes del cierre del body
+        //Pero como con CSS, es mejor tener tu codigo Js en un documento aparte y enlazarlo con el script src
+        </script>
+        <script src="/CursoWebDevelopent/HTMLdesdeCero/assets/codes.js"></script>
+    </body>
+</html>

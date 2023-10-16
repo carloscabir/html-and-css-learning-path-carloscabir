@@ -1,0 +1,378 @@
+/* 
+Selectores Basicos
+1) Etiquetas - son elemetos de html
+2) Identificadores - atributo id - #
+3) Clases - atributo class - .
+
+*/
+
+h1 {
+  background-color: black;
+  text-align: center;
+}
+
+p {
+  color: midnightblue;
+}
+
+/* Dar estilos con Id es una mala practicaa */
+#parrafo-dos {
+  background-color: #222;
+  color: aliceblue;
+}
+
+/* Una buena practica seria hacerlo con clases, debido a que podemos reutilizar codigo */
+/* Al igual podemos ordenar nuestros estilos alfabeticamente para encontrar un trozo de codigo mas rapido */
+.bg-skyblue {
+  background-color: skyblue;
+}
+
+.bg-steelblue {
+  background-color: steelblue;
+}
+
+.text-20 {
+  font-size: 20px;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+.text-pink {
+  color: pink;
+}
+
+.hijos-directos > li {
+  background-color: thistle;
+}
+
+/*
+ Si no te importa en que nivel se encuentra el hijo de esta clase solo tabula y listo!
+recuerda que los bold con etiquetas de bloque
+ */
+.hijos-descendientes b {
+  background-color: thistle;
+}
+
+/* 
+Los selectores de hermanos van a aplicar a los elementos que son hermanos (los que estan al mismo nivel) y que esten por debajo del elemento de referencia */
+.hermanos-general ~ li {
+  background-color: thistle;
+}
+
+/* 
+Tomara como referencia y solo le aplicara el estilo a el hermano que esta inmediatamente por debajo del hermano de referencia
+ */
+.hermanos-adyacentes + li {
+  background-color: thistle;
+}
+
+/*Selectores atributos (del elemeto html)*/
+
+.selectores-atributos a[href] {
+  color: green;
+}
+
+.selectores-atributos a[target="_blank"] {
+  font-weight: bold;
+}
+
+/* El comodin del * aplica el estilo si contiene la palabra en cuestion */
+.selectores-atributos a[href*="jonmircha"] {
+  font-size: 30px;
+}
+
+/* El comodin del ^ aplica el estilo si contiene el texto en cuestion al inicio*/
+.selectores-atributos a[href^="http://"]
+{
+  text-decoration: none;
+}
+
+/* El comodin del $ aplica el estilo si contiene el texto en cuestion al final  */
+.selectores-atributos a[href$=".com/"] {
+  background-color: #222;
+  color: aliceblue;
+}
+
+/* El comodin del ~ aplica el estilo si contiene el texto en cuestion en una lista separada por espacios  */
+.selectores-atributos a[class~="cursos"] {
+  background-color: steelblue;
+  color: aliceblue;
+}
+
+/* El comodin del | aplica el estilo si contiene el texto en cuestion en una lista separada por espacios y despues del texto en cuestion venga un guion medio*/
+.selectores-atributos a[class|="menu"] {
+  font-style: italic;
+}
+
+/* Selector Universal */
+
+* {
+  font-family: sans-serif;
+}
+
+.selector-universal * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}
+
+/* Pseudoclases -  Dan estilos dependiendo de el contexto, posicion o estado del elemento
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes 
+*/
+
+.form-pseudoclases *:required {
+  /* Para elementos requeridos */
+  border-color: yellow;
+}
+
+.form-pseudoclases *:valid {
+  /* Elementos validos */
+  border-color: green;
+}
+
+.form-pseudoclases *:invalid {
+  /* Elementos invalidos */
+  border-color: red;
+}
+
+.form-pseudoclases *:focus {
+  /* Cuando seleccionemos un elemento, foco */
+  background-color: skyblue;
+}
+
+.form-pseudoclases *:disabled {
+  /* Elementos desabilitados */
+  background-color: thistle;
+}
+/* Aqui vamos a ver la jerarquia de los estilos, recuerda que hover es para interactividad, asi que tendria que ir al final xd  */
+.menu-pseudoclases a:visited {
+  /* Enlaces visitados */
+  color: olive;
+}
+
+.menu-pseudoclases a:hover {
+  /* Cuando tengamos el cursor sobre el element */
+  color: orangered;
+}
+
+.p-pseudoclases:hover {
+  font-size: 20px;
+  transition: all 0.5s ease-in;
+}
+
+#temario:target {
+  /* Cuando el elemento se encuentre en nuestra barra del navegador como tal (con esto podemos hacer varias cosas en css que con js) */
+  background-color: lightgreen;
+}
+
+/* De posicion, todo dependera en como se encuentre en su contenedor */
+.lista-pseudoclases li:first-child {
+  color: green;
+}
+
+.lista-pseudoclases li:last-child {
+  color: violet;
+}
+
+.lista-pseudoclases li:nth-child(3) {
+  /* Elegimos el elemento */
+  color: navy;
+}
+
+.lista-pseudoclases li:nth-child(4n) {
+  /* Con n ingresado, damos la indicacion que dara estilo de 4 en 4 elementos */
+  font-size: 24px;
+}
+
+.lista-pseudoclases li:nth-child(3n + 1) {
+  /* Sumamos a la sucesion */
+  font-weight: bold;
+}
+
+.lista-pseudoclases li:nth-child(even) {
+  /* Pares */
+  background-color: yellow;
+}
+
+.lista-pseudoclases li:nth-child(odd) {
+  /* Inpar */
+  background-color: yellow;
+}
+
+.articulo-pseudoclases p:first-child {
+  /* Aqui la regla no cumple, debido a la posicion de hijo */
+  background-color: pink;
+}
+
+.articulo-pseudoclases p:first-of-type {
+  /* Aqui sí, el primero en su tipo como dice la pseudoclase */
+  background-color: pink;
+}
+
+.articulo-pseudoclases p:last-of-type {
+  background-color: violet;
+}
+
+.articulo-pseudoclases p:nth-of-type(2) {
+  background-color: olive;
+}
+
+/* exepciones (podes agregar mas insertando comas)*/
+.articulo-pseudoclases *:not(p) {
+  background-color: beige;
+}
+
+/*
+ Pseudoelementos - Dan estilos a partes especificas de un elemento, se usa el :: para diferenciarlos de las pseudoclases (Aunque los navegadores modernos aceptan un :, pero un buena practica sería hacerlo con un par de :)
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudoelementos
+ */
+
+.saga-geminis::before {
+  content: "👯‍♂️";
+}
+
+.saga-geminis::after {
+  content: "👯‍♂️♓";
+}
+
+.saga-precio::before {
+  /* Antes */
+  content: "$";
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.saga-precio::after {
+  /* Despues */
+  content: "USD";
+  font-weight: bold;
+}
+
+.p-pseudoelementos::first-letter {
+  /* Primer letra */
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.p-pseudoelementos::first-line {
+  /* Primera Linea */
+  color: coral;
+}
+
+.p-pseudoelementos::selection {
+  /* Seleccion de elemento */
+  color: greenyellow;
+  background-color: #222;
+}
+
+.input-pseudoelementos::placeholder {
+  color: green;
+}
+
+/* Agrupar Selectores */
+
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea {
+  border-color: aquamarine;
+  border-width: 2px;
+  background-color: #222;
+  border-style: dashed;
+  font-size: 20px;
+  display: block;
+  width: 300px;
+}
+
+/* 
+El algoritmo de CSS: Es la forma en que el navegador aplica los estilos al documento HTML. Es vital entender este concepto para que entiendas como se aplican y en algunas ocasiones dse sobreescriben las reglas CSS
+1)La Cáscada
+2)La Especificidad
+3)La Herencia
+
+
+La Cáscada es el mecanismo en el que el navegador aplica los estilos. Y toma en cuenta lo siguente en este orden:
+1) El Origen de l Codigo
+ -El User Agent dos estilos por defecto del navegador
+ -Personalizacion del Usuario
+ -Los estilos del autor
+ 2)La Especificidad del Selector
+ 3)Orden de Aparición
+
+
+ La Especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la siguente forma:
+  Etiquetas y pseudoelementos .............0,0,0,1
+  Clases, atributos y pseudoclases.........0,0,1,0
+  Identificadores..........................0,1,0,0
+  Estilos en Linea.........................1,0,0,0
+  !important................Rompe la especificidad
+
+  Una buena practica seria hacer nuestras llamadas de clase con maximo dos selectores (una clase y un elemento hijo :))
+
+
+  La Herencia, es la capacidad de un selector obtener (heredar) los valores de sus ancestros mas cercanos, para aplicarla se usa el valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestion con el valor initial
+
+  */
+
+blockquote#cita-marco.cita-marco {
+  background-color: lightgray;
+}
+
+blockquote {
+  background-color: blueviolet;
+}
+
+#cita-marco {
+  background-color: lightcoral;
+}
+
+blockquote.cita-marco {
+  background-color: thistle;
+}
+.cita-marco {
+  background-color: aquamarine;
+}
+
+/* Denominadas malas practicas (Obviamente si es que abusas de ello) */
+
+.cita-marco {
+  background-color: mediumorchid !important;
+}
+
+.cita-marco {
+  background-color: olive !important;
+}
+
+blockquote#cita-marco {
+  background-color: cadetblue;
+}
+
+.cita-marco {
+  background-color: moccasin !important;
+  background-color: orangered !important;
+  /* Todo lo que tenga que ver con la tipografía si se hereda miau */
+  font-size: 32px;
+  border-style: dotted;
+  border-color: red;
+}
+
+.cita-marco cite {
+  background-color: pink;
+  background-color: inherit;
+  font-size: 24px;
+  font-size: initial;
+  border-style: inherit;
+  border-color: inherit;
+}
+
+/* 
+- https://autoprefixer.github.io/
+
+Prefijos de Navegadores
+-webkit-user-select: none; (todos)
+-moz-user-select: none; (firefox)
+-ms-user-select: none; (Microsoft)
+user-select: none;  (ya no utilizada (que era de opera))
+ */

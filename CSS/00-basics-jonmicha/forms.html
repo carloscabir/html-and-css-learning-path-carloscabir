@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios en CSS</title>
+  <link rel="stylesheet" href="css/forms.css">
+</head>
+<h1>Formularios en CSS</h1>
+
+<body>
+  <form class="contact-form" method="POST" action="https://formsubmit.co/carlangascamachobrigido@gmail.com.com">
+    <h4>Formulario de Contacto</h4>
+    <input type="text" name="nombre" placeholder="Inserta tu nombre" pattern="^[A-Za-z\s]+$"
+      title="Nombre solo acepta letras y espacios en blanco" required>
+    <input type="email" name="correo" placeholder="Inserta tu correo electronico" title="Correo invalido"
+      pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+      required>
+    <textarea name="comentarios" id="" cols="30" rows="10" required placeholder="Escribe tus comentarios"></textarea>
+    <input type="submit">
+  </form>
+</body>
+
+</html>

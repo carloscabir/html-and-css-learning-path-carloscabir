@@ -1,0 +1,124 @@
+/* 
+background-color: define el color de fondo del elemento
+
+background-image: define la imagen de fondo del elemento
+
+background-size: define el tamanio de la imagen de fondo, primer valor x, segundo y;
+ - cover: cambia el tamanio de la imagen de fondo para asegurarse de que permanezca completamente visible
+ - contain: cambia el tamanio de la imagen de fonto para asegurarse de que el elemento este completamente cubierto
+ 
+ background-repeat: define como se repite la imagen de fondo en el elemento
+
+background-position: 
+define la posicion de la imagen de fondo, primer valor x, segundo y, si no se especifica un segundo valor este sera center
+aparte de valores numericos podemos indicar el posicionamiento con las palabras: center, top, bottom, left and right
+
+background-clip: define cuando debe extenderse el fondo dentro del elemento
+
+background-origin: define el origen de la imagen de fondo
+
+background-attachment: define como se comportara la imagen de fondo al desplazarse por la pagina
+
+*/
+
+.box {
+  margin: 2rem auto;
+  width: 300px;
+  height: 300px;
+  border: dashed red medium;
+}
+
+.bg-color {
+  background-color: black;
+}
+
+.bg-image {
+  background-image: url("../assets/hola.jpg");
+}
+
+.bg-size {
+  background-image: url("../assets/hola.jpg");
+  background-size: 1rem 2rem;
+  background-size: 10rem;
+  background-size: cover; /* sera completamente visible */
+  background-size: contain; /* Se asegurara de que toda la imagen se visualize, pero tenemos riesgo de que no se vea completamente */
+}
+
+.bg-repeat {
+  background-image: url("../assets/hola.jpg");
+  background-size: 100px;
+  background-repeat: repeat;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+}
+
+.bg-position {
+  background-color: rgb(19, 110, 214);
+  background-image: url("../assets/hola.jpg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 10px 20px;
+  background-position: 1rem 2rem;
+  background-position: 20% 30%;
+  background-position: center;
+  background-position: bottom left;
+  background-position: top right;
+  background-position: bottom center;
+}
+
+.bg-clip {
+  background-color: rgb(19, 110, 214);
+  background-image: url("../assets/hola.jpg");
+  background-size: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box; /* default */
+  background-clip: padding-box;
+  background-clip: content-box;
+  background-clip: padding-box;
+  background-clip: content-box; /* solo afectara a la imagen y no a su fondo */
+  padding: 1rem;
+}
+
+.bg-origin {
+  background-color: rgb(19, 110, 214);
+  background-image: url("../assets/hola.jpg");
+  background-size: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  background-origin: padding-box; /* default */
+  background-origin: border-box;
+  background-origin: content-box; /* afectara a ambos  */
+}
+
+.bg-attachment {
+  background-color: rgb(19, 110, 214);
+  background-image: url("../assets/hola.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  background-attachment: scroll;
+  background-attachment: fixed;
+}
+
+/* El shorthand no seria tan recomendabke por que a pesar de tener que memorizar todas las posiciones puedes tener un error no deseado, por ello no lo incluyo aca */
+
+/* Unos pequenio ejercicios x */
+.bg-multiple {
+  width: 50%;
+  height: 30vh;
+  background-image: url("/assets/hola.jpg"), url("/assets/g.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: 10%, cover;
+}
+
+.bg-art {
+  width: 1000px;
+  height: 700px;
+  /* Aca si nos va a servir el shorthand de background */
+  background: url("/assets/chapter_picture_1.jpg") no-repeat center top,
+    url("/assets/que.jpg") no-repeat top center fixed;
+}

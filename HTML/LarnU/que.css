@@ -1,0 +1,7 @@
+.col-6{
+background-color: #222;
+display:flex;
+flex-direction: column-reverse;
+margin: 2px dashed rgb(143, 143, 172);
+color: #FFFFFF;
+}

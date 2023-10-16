@@ -1,0 +1,148 @@
+/* 
+Unidades de Medida
+1) Absolutas (Su valor no cambia, son unidades del mundo real) (usualmente para impresiones)
+ pc, cm, mm, in, Q
+ pt (1/72in)
+ px (1/95in)
+
+ 2) Relativas (Su valor es relativo a un contexto)
+ em, rem, ex, ch - al tamanio de la fuente
+ em - basada en la anchura de la "m" de la fuente del elemento
+ rem - basada en la anchura de la "m" de la fuente del elemento raíz (html)
+ ex - basada en la altura de la "x" de la fuente del elemento
+ ch - basada en la anchura "0" de la fuente del elemento
+ % - al tamanio del contenedor
+
+ vw, vh, vmin, vmax, - al tamanio del viewport
+ vw - ancho del viewport van del 1 a 100
+ vh - alto del viewport van del 1 a 100
+ vmax - entre vw y vh toma el que tenga mayor valor
+ vmin - entre vw y vh toma el que tenga menor valor
+  
+ Conversiones entre unidades - http://pxtoem.com/
+*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::backdrop {
+  box-sizing: inherit;
+}
+
+/* Pixeles, ya no tan usados debido a el Responsive Design */
+.pixels {
+  background-color: cadetblue;
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  font-size: 32px; /* Valor por defecto */
+  border: thick solid rebeccapurple;
+}
+
+/* Ems,  (font-size = 16px; 1em = 16px, 2em = 32px ...)*/
+.ems {
+  background-color: cadetblue;
+  font-size: 24px;
+  padding: 1em 0.5em; /* Estaremos tomando como referencia el tamanio de la fuente(del scope o base). En este caso 1em equivale a 24px */
+  border: thick solid black;
+}
+
+.em-child {
+  background-color: peachpuff;
+  border: thick black solid;
+  font-size: 2em; /* Ahora estamos tomando como referencia el tamanio de la fuente de su padre. En este caso 24px y 2em equivale al doble, es decir 48px  */
+  margin: 0.5em;
+  padding: 1rem;
+}
+
+/* Hola */
+
+/* Rems, (toma de referencia a el elemento raiz (html). Tomando como referencia la anchura de "m" (hablando tipograficamente)) */
+
+.rems {
+  background-color: cadetblue;
+  font-size: 24px;
+  border: thick solid black;
+}
+
+.rem-child {
+  background-color: peachpuff;
+  border: thick solid black;
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+/* Exs, (toma como referencia al el elemento raiz. Pero en este caso toma la altura de "x" (hablando tipograficamente)) */
+
+.exs {
+  background-color: cadetblue;
+  font-size: 24px;
+  border: thick solid black;
+}
+
+.ex-child {
+  background-color: peachpuff;
+  border: thick solid black;
+  font-size: 2ex;
+  margin: 0.5ex;
+  padding: 1ex;
+}
+
+/*
+Chs, estos se van a ajustar a los caracteres que tu indiques(en CHs porsupuesto), por lo cual esta unidad es bastante valiosa a la hora de crear formularios, por ejemplo.  
+Todo esto tomando como referencia a "0" y el font-size de nuestro elemento raíz, es decir html. 
+*/
+
+.chs {
+  background-color: cadetblue;
+  width: 15ch;
+  overflow-y: scroll;
+}
+
+/* Porcentajes, esto se adaptara al tamanio de su contenedor padre */
+
+.percentages {
+  background-color: darkcyan;
+  padding: 5%;
+  margin: 5% 10%;
+  width: 80%;
+  font-size: 100%; /* Lo tomara de la raiz (html), por eso es importante definir el tamanio de tu fuente xd*/
+  height: 100%; /* Y aqui va a ver un problema, no se aplicará. Digamos que la altura es un tema bastante peculiar, la altura va a estar delimitada por el tamanio del contenido es decir, la altura la va a definir tu contenido. una regla de oro :D 
+  A exepcion de que tu contenedor padre tenga un valor de altura bien establecido para que podamos solucionar este problema de unidades porcentuales */
+}
+
+.height-parent {
+  background-color: burlywood;
+  width: 500px;
+  height: 500px;
+}
+
+.height-child {
+  background-color: darkblue;
+  width: 50%;
+  height: 50%;
+  color: #fff;
+}
+
+/* Viewport 
+Las medidas siempre van a estar basadas en el viewport del navegador, sin importar si es que existen padres */
+
+.viewport {
+  background-color: darkcyan;
+  width: 50vw;
+  width: 100vw; /* Recuerda que la etiqeueta body tiene margenes por defecto de 8, primero tendrias que resetear tu body, pero aparte esta tu barra de scroll del navegador que forma parte del viewport */
+  height: 100vh;
+  font-size: 5vw;
+  padding: 3vh;
+}
+
+.vmin,
+.vmax {
+  background-color: darksalmon;
+  width: 50vmax;
+  height: 50vmin;
+  border: thick solid black;
+}

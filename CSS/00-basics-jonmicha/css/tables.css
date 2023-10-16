@@ -1,0 +1,34 @@
+html {
+  background-color: thistle;
+  color: black;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.table {
+  border: medium solid black;
+  font-size: 3rem;
+  border-collapse: separate; /* default* */
+  border-collapse: collapse; /* Collapso de los bordes (?) */
+  /* Si es que existe una celda vacia podes aplicar this: */
+  empty-cells: hide; /* Debes tener el border collapse en separate para que funcione */
+  border-collapse: separate;
+  empty-cells: show; /* default* */
+}
+
+.table,
+th,
+td {
+  border: medium black solid;
+  border-spacing: 10px; /* Espaciado de las celdas (tr)
+  pero tenes que tener el valor de border collapse (en tu tabla) separate */
+  border-spacing: 0; /* Similar a border collapse, pero no sirve debido a que juntamos bordes */
+  border-spacing: 1rem;
+}

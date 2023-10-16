@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  border: medium solid darkmagenta;
+  width: 420px;
+  height: 420px;
+  background-color: thistle;
+  /* display: flex; */
+}
+
+.card img {
+  height: 300px;
+  height: 50%;
+  /* Para ayudar con la deformacion haremos uso de la siguente propiedad, que de hecho es muy parecido a background-size (debido a las propiedades dentro de ella xd) */
+  object-fit: fill; /* Valor por defecto de object-fill */
+  object-fit: cover;
+  object-fit: 50% 50%; /* default === fill */
+  object-fit: left top;
+
+  object-fit: contain; /* Look at this bro, it's good!, (obviamente puede haber errores en el relleno y ello que teniamos en la propiedad con la que la asemejamos) */
+  background-color: thistle; /* for example */
+  object-fit: none; /* no */
+  object-fit: scale-down; /* **** Toma el valor que sea menor de los valores contain y none **** */
+  /* object-fit: none; */
+  object-position: left top;
+  object-position: bottom;
+  object-position: center;
+  object-position: 40px -100px;
+  object-position: top left;
+}

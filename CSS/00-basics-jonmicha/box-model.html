@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo de Caja CSS</title>
+    <link rel="stylesheet" href="/css/box-model.css" />
+  </head>
+  <body>
+    <h1>Modelo de Caja CSS</h1>
+    <!-- Modelo de Caja -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis rem
+      dolore praesentium at ea, molestiae quod earum temporibus velit et ipsum
+      fuga doloribus, suscipit explicabo? Quidem maiores accusamus voluptatum.
+    </p>
+    <hr />
+    <div class="caja-uno">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum possimus
+      animi ipsa asperiores tempora exercitationem architecto. Est hic placeat
+      odit voluptas maiores cum unde nulla saepe? Tempora aperiam quos
+      quibusdam!
+    </div>
+    <div class="caja-dos">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum possimus
+      animi ipsa asperiores tempora exercitationem architecto. Est hic placeat
+      odit voluptas maiores cum unde nulla saepe? Tempora aperiam quos
+      quibusdam!
+    </div>
+    <hr />
+    <h2>Cajas de Linea VS Cajas de Bloque</h2>
+    <!-- Cajas de linea y de Bloque, parecido a HTML, a las cajas de Linea no se les puede modificar algunas propiedades mientras que a las de Bloque SI  -->
+    <span class="caja-linea">Esto es una Caja de Linea</span>
+    <span>Otra Caja de Linea</span>
+    <div class="caja-bloque">Esto es una Caja de Bloque</div>
+    <hr />
+    <h2>Propiedad Display</h2>
+    <!-- Como es que se va a enseniar el contenido, inline,block, inline-block (que tiene propiedades de una Caja de Linea a diferencia de que esta si se puede modificar), -->
+    <div class="caja-none">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, eum?
+        Corporis recusandae vero dolorem error ipsam nostrum cumque molestiae,
+        fuga nulla est veniam inventore veritatis animi. Optio perferendis
+        doloremque ipsum!
+      </p>
+    </div>
+    <span class="caja-linea-bloque">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quas.
+      Illum vel laudantium illo quasi a nesciunt maiores deleniti soluta
+      cupiditate dolores, eos hic vitae ea fugiat quibusdam. Esse, cumque!
+    </span>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sequi
+      numquam corrupti? Minus atque alias asperiores iste voluptatum sed ea
+      laboriosam reprehenderit officia eum. Ex iusto similique repudiandae qui
+      expedita.
+    </p>
+    <ul>
+      <!-- El list item le aplica un poco de margin junto la bullet -->
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ol>
+    <table>
+      <!-- Tendra ya las propiedades de display: table; -->
+      <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+        <td>Celda 3</td>
+      </tr>
+      <tr>
+        <td>Celda 4</td>
+        <td>Celda 5</td>
+        <td>Celda 6</td>
+      </tr>
+      <tr>
+        <td>Celda 7</td>
+        <td>Celda 8</td>
+        <td>Celda 9</td>
+      </tr>
+    </table>
+    <hr />
+    <h2>Propiedad Visibility</h2>
+    <!-- Dependiendo de la propiedad que le asignemos a visibility determinara si es que el contenido se va a ver o no (hidden, none) -->
+    <div class="caja-none">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, eum?
+        Corporis recusandae vero dolorem error ipsam nostrum cumque molestiae,
+        fuga nulla est veniam inventore veritatis animi. Optio perferendis
+        doloremque ipsum!
+      </p>
+    </div>
+    <div class="caja-hidden">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, eum?
+        Corporis recusandae vero dolorem error ipsam nostrum cumque molestiae,
+        fuga nulla est veniam inventore veritatis animi. Optio perferendis
+        doloremque ipsum!
+      </p>
+    </div>
+    <hr />
+    <h2>Propiedad Overflow</h2>
+    <!-- Scroll de contenido desbordado a dependencia de un tamanio fijo -->
+    <p class="overflow">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste doloribus,
+      saepe vel incidunt, temporibus delectus debitis, voluptatem eum tenetur
+      aspernatur natus ratione fugit non eligendi numquam ea molestias veniam
+      recusandae?
+    </p>
+    <hr />
+    <h2>Tamanio de Caja</h2>
+    <!-- Tamanio desde donde va a empezar de dependiendo la propiedad que le asignemos a box-sizing  -->
+    <div class="box-sizing-content">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam similique
+      nisi sit autem, dicta tenetur pariatur, quidem iste iure, error commodi
+      voluptates voluptatum aspernatur ad et minus. Fuga, et quae?
+    </div>
+    <div class="box-sizing-border">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eos veniam
+      accusamus recusandae ullam sunt iste illum. Voluptatum maxime
+      necessitatibus dignissimos veniam veritatis, quod saepe ullam sed. Et,
+      cumque magni.
+    </div>
+    <article class="container-col-3">
+      <section class="item">Seccion 1</section>
+      <section class="item">Seccion 2</section>
+      <section class="item">Seccion 3</section>
+    </article>
+    <hr />
+    <h2>Propiedad Float & Clear</h2>
+    <!-- Nos va permitir flotar hacia la izquierda o derecha elementos -->
+    <article class="container-floats">
+      <section class="float-right">Este elemento flota a la derecha</section>
+
+      <section class="float-left">Este elemento flota a la izquierda</section>
+      <div class="clearfix"></div>
+    </article>
+    <article>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+        repudiandae hic at inventore fuga vero, nam dolor molestias odio.
+        Doloremque molestias tempore in mollitia dolorem eos laboriosam rerum,
+        placeat aut.
+      </section>
+    </article>
+    <hr />
+    <h2>Colapso de Margenes Verticales</h2>
+    <!-- Los margenes verticales de un elemento con otro, se van a acoplar (superponer), es decir, tu logica de la sumatoria de los margenes va a ser x, pues no. Aqui es cuando aplica el colapso de margenes verticales; y esta regla deci lo de arriba.
+     -->
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde
+      voluptate perferendis saepe error aspernatur accusamus, nam tenetur
+      laboriosam sequi minus suscipit. Aut itaque labore, iure voluptatum
+      quaerat enim doloremque.
+    </div>
+    <article class="margin-colapse">
+      <section>Sección 1</section>
+      <section>Sección 2</section>
+      <section>
+        <span>Span 1</span><span>Span 2</span><span>Span 3</span>
+      </section>
+    </article>
+    <hr />
+    <h2>Centrado de Cajas</h2>
+    <article class="sitio-web">
+      <header>Cabecera</header>
+      <main>Contenido Principal</main>
+      <footer>Pie de Pagina</footer>
+    </article>
+    <a href="index.html#temario">☝️</a>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>
